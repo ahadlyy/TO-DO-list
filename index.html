@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Drag and Drop To-Do List</title>
+</head>
+<body>
+    <h1>Drag and Drop To-Do List</h1>
+
+    <div class="container">
+        <div id="todo" class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>To-Do</h2>
+        </div>
+        <div id="progress" class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>In Progress</h2>
+        </div>
+        <div id="done" class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Done</h2>
+        </div>
+    </div>
+
+    <form id="addTaskForm">
+        <label for="taskInput">Task:</label>
+        <input type="text" id="taskInput" required>
+        <button type="button" onclick="addTask()">Add Task</button>
+    </form>
+
+    <div id="actionButtons">
+        <button id="clearAllButton" onclick="confirmClearAllTasks()">Clear All Tasks</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
